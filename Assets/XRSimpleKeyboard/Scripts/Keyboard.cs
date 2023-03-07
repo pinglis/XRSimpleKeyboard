@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
@@ -50,7 +51,13 @@ namespace XRSimpleKeyboard
         private Camera worldCamera;
 
         [Header("Audio & Haptics")]
-        public AudioClip keyClickAudio;
+        public AudioClip KeyClickAudio;
+
+        [SerializeField]
+        public Material KeyUpMaterial;
+
+        [SerializeField]
+        public Material KeyDownMaterial;
 
         private LayoutManager layoutManger = new LayoutManager();
         private Dictionary<GameObject, Key> keyMap = new Dictionary<GameObject, Key>();
@@ -187,6 +194,10 @@ namespace XRSimpleKeyboard
 
             // The world camera should not be null for performance!
             script.WorldCamera = worldCamera;
+
+            // Set materials to use
+            script.KeyDownMaterial = this.KeyDownMaterial;
+            script.KeyUpMaterial = this.KeyUpMaterial;
 
             return go;
         }
