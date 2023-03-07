@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8118477811061165694}
   - component: {fileID: 969858477636281074}
   - component: {fileID: 4351057305598796957}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 2723823762435669974}
   - component: {fileID: 5768201506538473385}
   - component: {fileID: 4336387969282013694}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: ShiftTextLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 5641995141034951885}
   - component: {fileID: 653596319260249380}
   - component: {fileID: 3237212401404454862}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Key2_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -272,7 +272,8 @@ MonoBehaviour:
   keyLabel: {fileID: 5500994775314004339}
   keyShiftLabel: {fileID: 4336387969282013694}
   WorldCamera: {fileID: 0}
-  KeyMaterial: {fileID: 0}
+  KeyDownMaterial: {fileID: 0}
+  KeyUpMaterial: {fileID: 0}
   KeyTextColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!54 &653596319260249380
 Rigidbody:
@@ -314,7 +315,7 @@ GameObject:
   - component: {fileID: 8986143220256679414}
   - component: {fileID: 4975420193497569041}
   - component: {fileID: 5500994775314004339}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: TextLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -447,7 +448,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4920785861114312813}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -484,7 +485,7 @@ GameObject:
   - component: {fileID: 8230360880943776887}
   - component: {fileID: 1081668903913995682}
   - component: {fileID: 3208567370746931613}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
