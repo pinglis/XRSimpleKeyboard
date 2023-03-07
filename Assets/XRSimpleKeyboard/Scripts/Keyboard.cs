@@ -1,10 +1,6 @@
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UIElements;
 
 namespace XRSimpleKeyboard
 {
@@ -62,14 +58,13 @@ namespace XRSimpleKeyboard
         private LayoutManager layoutManger = new LayoutManager();
         private Dictionary<GameObject, Key> keyMap = new Dictionary<GameObject, Key>();
         private ILayout layout;
-        private AudioSource audioSource;
+
 
         /// <summary>
         /// Perform a layout of the keyboard and add its keys to the parent gameobject
         /// </summary>
         public void Start()
-        {
-            audioSource = GetComponent<AudioSource>();
+        {             
             float z = 0;
 
             // Get the correct layout for our locale

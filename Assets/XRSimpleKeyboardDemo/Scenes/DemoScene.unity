@@ -1715,6 +1715,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1057335643}
   - component: {fileID: 1057335644}
+  - component: {fileID: 1057335646}
   - component: {fileID: 1057335645}
   m_Layer: 3
   m_Name: Keyboard
@@ -1875,6 +1876,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1057335646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057335642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2adc5e6e86ee2b74a83947ddb64e2a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1057335645}
+  keyDownAudioClip: {fileID: 8300000, guid: 8ea38f672bdb31f439d9f1cd175a08d6, type: 3}
+  keyboard: {fileID: 1057335644}
 --- !u!1 &1070460089
 GameObject:
   m_ObjectHideFlags: 0
@@ -2279,10 +2295,10 @@ MonoBehaviour:
   m_DirectionalAnchorRotationAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Directional Anchor Rotation
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: 04fe9e0a-db05-404e-ae62-4dd0ef79bc68
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []

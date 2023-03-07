@@ -2,11 +2,9 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
 
 namespace XRSimpleKeyboard
 {
-    [RequireComponent(typeof(Renderer))]
     /// <summary>
     /// Behaviour script that should be added to every key prefab
     /// </summary>
