@@ -6,6 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 namespace XRSimpleKeyboard
 {
+    [RequireComponent(typeof(Renderer))]
     /// <summary>
     /// Behaviour script that should be added to every key prefab
     /// </summary>
@@ -73,9 +74,14 @@ namespace XRSimpleKeyboard
         public Camera WorldCamera;
 
         /// <summary>
-        /// The material to apply to the key
+        /// The material to apply to the key when it is in the up state
         /// </summary>
-        public Material KeyMaterial;
+        public Material KeyDownMaterial;
+
+        /// <summary>
+        /// The material to apply to the key when it is in the down state
+        /// </summary>
+        public Material KeyUpMaterial;
 
         /// <summary>
         /// The color of the key text
@@ -87,6 +93,8 @@ namespace XRSimpleKeyboard
         /// </summary>
         private HashSet<Collider> pressingColliders = new HashSet<Collider>();
 
+        private Renderer[] keyboardRenderers;
+
         /// <summary>
         /// Initialize the key
         /// </summary>
@@ -95,6 +103,10 @@ namespace XRSimpleKeyboard
             keyLabel.text = KeyValue;
             keyShiftLabel.text = KeyShiftValue;
 
+
+            this.keyboardRenderers = GetComponentsInChildren<Renderer>();
+
+            SetMaterial(KeyUpMaterial);
 
             if (Application.IsPlaying(gameObject))
             {
@@ -124,7 +136,10 @@ namespace XRSimpleKeyboard
 
                     // Move the mesh down the required amount to that
                     // the user can tell it is pressed
-                    MoveMesh();                  
+                    MoveMesh();
+
+                    // Apply the key down material
+                    SetMaterial(KeyDownMaterial);
 
                     // If someone has registered a listener, then notify them
                     if (OnKeyDown != null)
@@ -159,6 +174,9 @@ namespace XRSimpleKeyboard
                     // the user can tell it is no longer pressed
                     MoveMesh();
 
+                    // Apply the key up material
+                    SetMaterial(KeyUpMaterial);
+
                     // If someone has registered a listener, then notify them
                     if (OnKeyUp != null)
                     {
@@ -184,5 +202,21 @@ namespace XRSimpleKeyboard
             }
             keyOffset.transform.localPosition = new Vector3(keyOffset.transform.localPosition.x, y, keyOffset.transform.localPosition.z);
         }
+
+        /// <summary>
+        /// Change the material of the key to the specified value
+        /// </summary>
+        /// <param name="material"></param>
+        private void SetMaterial(Material material)
+        {
+            if (material != null)
+            {
+                foreach(Renderer r in keyboardRenderers)
+                {
+                    r.material = material;
+                }                
+            }
+        }
+
     }
 }
