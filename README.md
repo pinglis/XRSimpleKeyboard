@@ -1,7 +1,7 @@
 # XRSimpleKeyboard
 A simple free Keyboard for XR written in Unity. Use in your projects as you wish.
 
-It was written using Unity 2021.3.16f1 and uses just basic colliders to work.
+It was written using Unity 2021.3.18f1 and uses just basic colliders to work.
 
 It was written and tested using an Oculus Quest 2.
 
